@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <input type="text" name="name" placeholder="Enter the player name">
+  <br>
+  <input type="text" name="desc" placeholder="Enter the description">
+  <br>
+  <input type="file" name="image">
+  <br>
+  <input type="datetime-local" name="date_added">
+  <br>
+  <input type="number" name="year_added">
+  <br>
+  <button type="submit">Submit</button>
+  <br>
+  {% for i in hot %}
+  {{i.name}}
+  <br>
+  {{i.desc}}
+  <br>
+  {{i.image}}
+  <br>
+  {{i.date_added}}
+  <br>
+  {{i.year_added}}
+  {% endfor %}
+</form>
+</body>
+</html>
